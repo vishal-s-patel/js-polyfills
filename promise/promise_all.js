@@ -2,6 +2,7 @@ function myPromiseAll(tasks) {
   let results = [];
   let completedPromises = 0;
   return new Promise((resolve, reject) => {
+    if (tasks.length === 0) resolve([]);
     tasks.forEach((task, index) => {
       Promise.resolve(task)
         .then((result) => {
